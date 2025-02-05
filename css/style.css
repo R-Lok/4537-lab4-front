@@ -41,3 +41,16 @@ body {
     height: 200px;
     border: 1px solid black;
 }
+
+#redirect {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    background: grey;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

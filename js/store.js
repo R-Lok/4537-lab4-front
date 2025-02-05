@@ -3,6 +3,7 @@ document.getElementById('word-label').textContent = storeWordLabel
 document.getElementById('definition-label').textContent = storeDefinitionLabel
 document.getElementById('submit').textContent = storeButton
 document.getElementById('definition').placeholder = storeDefinitionPlaceholder
+document.getElementById('redirect').textContent = storeRedirect
 
 document.getElementById('submit').addEventListener("click", async (e) => {
     e.preventDefault()

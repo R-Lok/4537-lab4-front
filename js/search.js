@@ -1,6 +1,7 @@
 document.getElementById('title').textContent = searchPageTitle
 document.getElementById('search').placeholder = searchInputPlaceholder
 document.getElementById('submit').textContent  = searchButtonText
+document.getElementById('redirect').textContent = searchRedirect
 
 document.getElementById('submit').addEventListener("click", (e) => {
 
