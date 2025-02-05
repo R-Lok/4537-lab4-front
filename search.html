@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
+    <link rel="stylesheet" href="./css/style.css">
     <script src="./lang/en/en.js"></script>
 </head>
 <body>
-    <h1 id="title"></h1>
-    <div id="form-container"></div>
+    <div id="container">
+        <div id="container-inner">
+            <h1 id="title"></h1>
+            <input type="text" id="search">
+            <button id="submit"></button>
+        </div>
+        <div id="result-container">
+            <h3 id="word"></h3>
+            <p id="definition"></p>
+        </div>
+    </div>
+    <script src="./js/util.js"></script>
     <script src="./js/search.js"></script>
 </body>
 </html>

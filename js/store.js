@@ -10,14 +10,20 @@ document.getElementById('submit').addEventListener("click", async (e) => {
     const definition = document.getElementById('definition').value
 
     if(word === '') {
-        alert("Word cannot be empty.")
+        alert(emptyWordWarning)
+        return
+    }
+
+    if(containsNonAlpha(word)) {
+        alert(nonAlphaWordWarning)
         return
     }
 
     if(definition === '') {
-        alert("Definition cannot be empty.")
+        alert(emptyDefWarning)
         return
     }
+
 
     const response = await submitWord(word, definition)
     //fill in the logic after
@@ -26,3 +32,4 @@ document.getElementById('submit').addEventListener("click", async (e) => {
 async function submitWord(word, def) {
     //fill in request when ready
 }
+
