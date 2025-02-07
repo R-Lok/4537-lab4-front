@@ -3,7 +3,7 @@ document.getElementById('search').placeholder = searchInputPlaceholder
 document.getElementById('submit').textContent  = searchButtonText
 document.getElementById('redirect').textContent = searchRedirect
 
-document.getElementById('submit').addEventListener("click", (e) => {
+document.getElementById('submit').addEventListener("click", async (e) => {
 
     const word = document.getElementById('search').value
 
@@ -18,5 +18,25 @@ document.getElementById('submit').addEventListener("click", (e) => {
     }
 
     //fill in request here later
+    try {
+        const response = await fetch(`https://www.fortunedgalab.xyz/api/dictionary?word=${word}`)
+        if(!response.ok) {
+           handle_error_res(response);
+        }
+
+    } catch (err) {
+        alert(networkError)
+    }
 
 })
+
+async function handle_error_res(res) {
+    switch(res.status) {
+        case 400:
+            alert(badRequest)
+            break
+        case 404:
+            const resText = await res.json()
+            alert(resText.status)
+    }
+}

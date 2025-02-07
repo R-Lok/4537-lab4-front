@@ -14,3 +14,6 @@ const searchRedirect = "Go to store"
 const emptyWordWarning = "Word cannot be empty."
 const nonAlphaWordWarning = "Word cannot contain non-alphabetical characters"
 const emptyDefWarning = "Definition cannot be empty."
+
+const networkError = "Network Error!"
+const badRequest = "Bad Request: Please ensure word is not empty and only contains alphabetical characters and '-'"
