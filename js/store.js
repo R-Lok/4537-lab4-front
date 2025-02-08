@@ -25,12 +25,29 @@ document.getElementById('submit').addEventListener("click", async (e) => {
         return
     }
 
-
-    const response = await submitWord(word, definition)
-    //fill in the logic after
+    await submitWord(word, definition)
 })
 
 async function submitWord(word, def) {
-    //fill in request when ready
+
+    try {
+        const response = await fetch("https://www.fortunedgalab.xyz/api/dictionary", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({"word": word, 'def': def})
+        }) 
+        
+        if(!response.ok) {
+            await handle_error_res(res)
+        } else {
+            const resMsg = await response.json()
+            alert(resMsg)
+        }
+
+    } catch (err) {
+        alert(networkError)
+    }
 }
 
