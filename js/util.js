@@ -1,5 +1,5 @@
 function containsNonAlpha(str) {
-    //ChatGPT got me the regex to test whether a string contains non-alphabetical characters
+    //ChatGPT got me the regex to test whether a string contains any characters that are non alphabetical or '-'
     return /[^a-zA-Z-]/.test(str);
   }
 
