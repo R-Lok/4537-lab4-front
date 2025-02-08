@@ -25,7 +25,10 @@ document.getElementById('submit').addEventListener("click", async (e) => {
         return
     }
 
-    await submitWord(word, definition)
+    if(await submitWord(word, definition)) {
+        document.getElementById('definition').value = ""
+        document.getElementById('word').value = ""
+    }
 })
 
 async function submitWord(word, def) {
@@ -41,13 +44,16 @@ async function submitWord(word, def) {
         
         if(!response.ok) {
             await handle_error_res(res)
+            return false
         } else {
             const resMsg = await response.json()
             alert(resMsg.status)
+            return true        
         }
 
     } catch (err) {
         alert(networkError)
+        return false
     }
 }
 

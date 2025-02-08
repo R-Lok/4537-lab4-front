@@ -17,7 +17,6 @@ document.getElementById('submit').addEventListener("click", async (e) => {
         return
     }
 
-    //fill in request here later
     try {
         const response = await fetch(`https://www.fortunedgalab.xyz/api/dictionary?word=${word}`)
         if(!response.ok) {
@@ -34,13 +33,3 @@ document.getElementById('submit').addEventListener("click", async (e) => {
 
 })
 
-async function handle_error_res(res) {
-    switch(res.status) {
-        case 400:
-            alert(badRequest)
-            break
-        case 404:
-            const resText = await res.json()
-            alert(resText.status)
-    }
-}
