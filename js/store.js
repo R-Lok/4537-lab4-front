@@ -43,7 +43,7 @@ async function submitWord(word, def) {
         }) 
         
         if(!response.ok) {
-            await handle_error_res(res)
+            await handle_error_res(response)
             return false
         } else {
             const resMsg = await response.json()
