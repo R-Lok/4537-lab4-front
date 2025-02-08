@@ -43,7 +43,7 @@ async function submitWord(word, def) {
             await handle_error_res(res)
         } else {
             const resMsg = await response.json()
-            alert(resMsg)
+            alert(resMsg.status)
         }
 
     } catch (err) {
